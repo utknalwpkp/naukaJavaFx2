@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_naukajavafx#2" default="compile.module.naukajavafx#2">
+  <dirname property="module.naukajavafx#2.basedir" file="${ant.file.module_naukajavafx#2}"/>
+  
+  <property name="module.jdk.home.naukajavafx#2" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.naukajavafx#2" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.naukajavafx#2" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.naukajavafx#2" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="naukajavafx#2.output.dir" value="${module.naukajavafx#2.basedir}/out/production/naukaJavaFx#2"/>
+  <property name="naukajavafx#2.testoutput.dir" value="${module.naukajavafx#2.basedir}/out/test/naukaJavaFx#2"/>
+  
+  <path id="naukajavafx#2.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="naukajavafx#2.module.production.classpath">
+    <path refid="${module.jdk.classpath.naukajavafx#2}"/>
+  </path>
+  
+  <path id="naukajavafx#2.runtime.production.module.classpath">
+    <pathelement location="${naukajavafx#2.output.dir}"/>
+  </path>
+  
+  <path id="naukajavafx#2.module.classpath">
+    <path refid="${module.jdk.classpath.naukajavafx#2}"/>
+    <pathelement location="${naukajavafx#2.output.dir}"/>
+  </path>
+  
+  <path id="naukajavafx#2.runtime.module.classpath">
+    <pathelement location="${naukajavafx#2.testoutput.dir}"/>
+    <pathelement location="${naukajavafx#2.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.naukajavafx#2">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.naukajavafx#2">
+    <patternset refid="excluded.from.module.naukajavafx#2"/>
+  </patternset>
+  
+  <path id="naukajavafx#2.module.sourcepath">
+    <dirset dir="${module.naukajavafx#2.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.naukajavafx#2" depends="compile.module.naukajavafx#2.production,compile.module.naukajavafx#2.tests" description="Compile module naukaJavaFx#2"/>
+  
+  <target name="compile.module.naukajavafx#2.production" depends="register.custom.compilers" description="Compile module naukaJavaFx#2; production classes">
+    <mkdir dir="${naukajavafx#2.output.dir}"/>
+    <javac2 destdir="${naukajavafx#2.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.naukajavafx#2}/javac">
+      <compilerarg line="${compiler.args.naukajavafx#2}"/>
+      <bootclasspath refid="naukajavafx#2.module.bootclasspath"/>
+      <classpath refid="naukajavafx#2.module.production.classpath"/>
+      <src refid="naukajavafx#2.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.naukajavafx#2"/>
+    </javac2>
+    
+    <copy todir="${naukajavafx#2.output.dir}">
+      <fileset dir="${module.naukajavafx#2.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.naukajavafx#2.tests" depends="register.custom.compilers,compile.module.naukajavafx#2.production" description="compile module naukaJavaFx#2; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.naukajavafx#2" description="cleanup module">
+    <delete dir="${naukajavafx#2.output.dir}"/>
+    <delete dir="${naukajavafx#2.testoutput.dir}"/>
+  </target>
+</project>

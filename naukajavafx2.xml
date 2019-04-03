@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="naukajavafx#2" default="all">
+  
+  
+  <property file="naukajavafx2.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.9.0" value="${jdk.home.9.0}/bin"/>
+  <path id="jdk.classpath.9.0">
+    <fileset dir="${jdk.home.9.0}">
+      <include name="../java!/java.activation"/>
+      <include name="../java!/java.base"/>
+      <include name="../java!/java.compiler"/>
+      <include name="../java!/java.corba"/>
+      <include name="../java!/java.datatransfer"/>
+      <include name="../java!/java.desktop"/>
+      <include name="../java!/java.instrument"/>
+      <include name="../java!/java.jnlp"/>
+      <include name="../java!/java.logging"/>
+      <include name="../java!/java.management"/>
+      <include name="../java!/java.management.rmi"/>
+      <include name="../java!/java.naming"/>
+      <include name="../java!/java.prefs"/>
+      <include name="../java!/java.rmi"/>
+      <include name="../java!/java.scripting"/>
+      <include name="../java!/java.se"/>
+      <include name="../java!/java.se.ee"/>
+      <include name="../java!/java.security.jgss"/>
+      <include name="../java!/java.security.sasl"/>
+      <include name="../java!/java.smartcardio"/>
+      <include name="../java!/java.sql"/>
+      <include name="../java!/java.sql.rowset"/>
+      <include name="../java!/java.transaction"/>
+      <include name="../java!/java.xml"/>
+      <include name="../java!/java.xml.bind"/>
+      <include name="../java!/java.xml.crypto"/>
+      <include name="../java!/java.xml.ws"/>
+      <include name="../java!/java.xml.ws.annotation"/>
+      <include name="../java!/javafx.base"/>
+      <include name="../java!/javafx.controls"/>
+      <include name="../java!/javafx.deploy"/>
+      <include name="../java!/javafx.fxml"/>
+      <include name="../java!/javafx.graphics"/>
+      <include name="../java!/javafx.media"/>
+      <include name="../java!/javafx.swing"/>
+      <include name="../java!/javafx.web"/>
+      <include name="../java!/jdk.accessibility"/>
+      <include name="../java!/jdk.attach"/>
+      <include name="../java!/jdk.charsets"/>
+      <include name="../java!/jdk.compiler"/>
+      <include name="../java!/jdk.crypto.cryptoki"/>
+      <include name="../java!/jdk.crypto.ec"/>
+      <include name="../java!/jdk.crypto.mscapi"/>
+      <include name="../java!/jdk.deploy"/>
+      <include name="../java!/jdk.deploy.controlpanel"/>
+      <include name="../java!/jdk.dynalink"/>
+      <include name="../java!/jdk.editpad"/>
+      <include name="../java!/jdk.hotspot.agent"/>
+      <include name="../java!/jdk.httpserver"/>
+      <include name="../java!/jdk.incubator.httpclient"/>
+      <include name="../java!/jdk.internal.ed"/>
+      <include name="../java!/jdk.internal.jvmstat"/>
+      <include name="../java!/jdk.internal.le"/>
+      <include name="../java!/jdk.internal.opt"/>
+      <include name="../java!/jdk.internal.vm.ci"/>
+      <include name="../java!/jdk.jartool"/>
+      <include name="../java!/jdk.javadoc"/>
+      <include name="../java!/jdk.javaws"/>
+      <include name="../java!/jdk.jcmd"/>
+      <include name="../java!/jdk.jconsole"/>
+      <include name="../java!/jdk.jdeps"/>
+      <include name="../java!/jdk.jdi"/>
+      <include name="../java!/jdk.jdwp.agent"/>
+      <include name="../java!/jdk.jfr"/>
+      <include name="../java!/jdk.jlink"/>
+      <include name="../java!/jdk.jshell"/>
+      <include name="../java!/jdk.jsobject"/>
+      <include name="../java!/jdk.jstatd"/>
+      <include name="../java!/jdk.localedata"/>
+      <include name="../java!/jdk.management"/>
+      <include name="../java!/jdk.management.agent"/>
+      <include name="../java!/jdk.management.cmm"/>
+      <include name="../java!/jdk.management.jfr"/>
+      <include name="../java!/jdk.management.resource"/>
+      <include name="../java!/jdk.naming.dns"/>
+      <include name="../java!/jdk.naming.rmi"/>
+      <include name="../java!/jdk.net"/>
+      <include name="../java!/jdk.pack"/>
+      <include name="../java!/jdk.packager"/>
+      <include name="../java!/jdk.packager.services"/>
+      <include name="../java!/jdk.plugin"/>
+      <include name="../java!/jdk.plugin.dom"/>
+      <include name="../java!/jdk.plugin.server"/>
+      <include name="../java!/jdk.policytool"/>
+      <include name="../java!/jdk.rmic"/>
+      <include name="../java!/jdk.scripting.nashorn"/>
+      <include name="../java!/jdk.scripting.nashorn.shell"/>
+      <include name="../java!/jdk.sctp"/>
+      <include name="../java!/jdk.security.auth"/>
+      <include name="../java!/jdk.security.jgss"/>
+      <include name="../java!/jdk.snmp"/>
+      <include name="../java!/jdk.unsupported"/>
+      <include name="../java!/jdk.xml.bind"/>
+      <include name="../java!/jdk.xml.dom"/>
+      <include name="../java!/jdk.xml.ws"/>
+      <include name="../java!/jdk.zipfs"/>
+      <include name="../java!/oracle.desktop"/>
+      <include name="../java!/oracle.net"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.9.0}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.9.0}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.9.0"/>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_naukajavafx#2.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.naukajavafx#2" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.naukajavafx#2" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>
